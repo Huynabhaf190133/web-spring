@@ -33,7 +33,6 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
         return giays;
 
     }
-
     public Giay getSingleByID(String id) {
         Giay giay=null;
         query = "Select * from giay where Magiay=?";
@@ -108,4 +107,5 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
         parameters.add(id);
         db.executeQuery(query,parameters);
     }
+
 }

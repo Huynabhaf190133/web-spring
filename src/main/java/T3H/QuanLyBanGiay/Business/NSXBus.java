@@ -15,7 +15,25 @@ public class NSXBus extends BaseBus implements IBus<NSX>{
 
     @Override
     public List<NSX> getAll() {
-        return null;
+        List<NSX> nsxes=new ArrayList<>();
+        query="select * from NSX";
+        Connection conn=db.getConnection();
+        if(conn!=null){
+            try{
+                PreparedStatement ps=(PreparedStatement)db.getConnection().prepareStatement(query);
+                ResultSet resultSet=ps.executeQuery();
+                initInfo initInfo=new initInfo();
+                while (resultSet.next()){
+                    nsxes.add(initInfo.initNXS(resultSet));
+                }
+                ps.close();
+            }catch (Exception throwables) {
+                throwables.printStackTrace();
+            }
+
+
+        }
+        return nsxes;
     }
 
     @Override

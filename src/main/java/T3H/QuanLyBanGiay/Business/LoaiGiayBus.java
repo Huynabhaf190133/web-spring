@@ -15,7 +15,24 @@ public class LoaiGiayBus extends BaseBus implements IBus<LoaiGiay>{
 
     @Override
     public List<LoaiGiay> getAll() {
-        return null;
+        List<LoaiGiay> loaiGiays=new ArrayList<>();
+        query="select * from LoaiGiay";
+        Connection conn=db.getConnection();
+        if(conn!=null){
+            try {
+                PreparedStatement ps=(PreparedStatement)db.getConnection().prepareStatement(query);
+                ResultSet resultSet=ps.executeQuery();
+                initInfo initInfo=new initInfo();
+                while (resultSet.next()){
+                    loaiGiays.add(initInfo.initLoaiGiay(resultSet));
+                }
+                System.out.println(resultSet);
+                ps.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return loaiGiays;
     }
 
     @Override

@@ -12,9 +12,10 @@ public class Giay {
     private String Anh;
     private String Mota;
 
-    public Giay(){
+    public Giay() {
 
     }
+
     public Giay(String maGiay, String tenGiay, int size, int soLuong, String mauSac, double gia, String maLG, String maNSX, String anh, String mota) {
         MaGiay = maGiay;
         TenGiay = tenGiay;

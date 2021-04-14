@@ -28,7 +28,6 @@ public class GiayService implements IGiayService{
 
     @Override
     public void add(Giay info) {
-        System.out.println(info.getMaLG());
         bus.add(info);
     }
 

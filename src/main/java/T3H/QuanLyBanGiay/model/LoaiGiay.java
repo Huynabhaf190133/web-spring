@@ -1,9 +1,13 @@
 package T3H.QuanLyBanGiay.model;
 
+import java.sql.Array;
+
 public class LoaiGiay {
     private String MaLG;
     private String TenLG;
-    public LoaiGiay(){}
+    public LoaiGiay(){
+
+    }
 
     public LoaiGiay(String maLG, String tenLG) {
         MaLG = maLG;

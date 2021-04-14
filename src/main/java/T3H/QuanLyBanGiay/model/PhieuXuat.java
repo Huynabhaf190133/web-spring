@@ -1,15 +1,17 @@
 package T3H.QuanLyBanGiay.model;
 
+import java.util.Date;
+
 public class PhieuXuat {
     private String MaPX;
-    private String NgayXuat;
+    private Date NgayXuat;
     private String MaNV;
     private String MaKH;
     private double TongTien;
     public PhieuXuat(){
 
     }
-    public PhieuXuat(String maPX, String ngayXuat, String maNV, String maKH, double tongTien) {
+    public PhieuXuat(String maPX, Date ngayXuat, String maNV, String maKH, double tongTien) {
         MaPX = maPX;
         NgayXuat = ngayXuat;
         MaNV = maNV;
@@ -25,11 +27,11 @@ public class PhieuXuat {
         MaPX = maPX;
     }
 
-    public String getNgayXuat() {
+    public Date getNgayXuat() {
         return NgayXuat;
     }
 
-    public void setNgayXuat(String ngayXuat) {
+    public void setNgayXuat(Date ngayXuat) {
         NgayXuat = ngayXuat;
     }
 

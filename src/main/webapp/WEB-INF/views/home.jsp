@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Huy</a>
+        <a class="navbar-brand" href="giay/index">Huy</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -68,30 +68,26 @@
 </div>
 
 <script>
-    var isSuccess = true;
-    setInterval(function () {
-        if (isSuccess) {
-            isSuccess = false;
-            var html = "";
             $.ajax({
-                url: "/getAll",
+                url: "/giay/getAll",
                 type: "GET",
                 dataType: "JSON",
                 success: function (result) {
+                    var html = "";
                     console.log(result);
                     for (let i = 0; i < result.length; i++) {
-                        html += "<div id='d-contain' class='col'><div class='card h-100'>" +
+                        html += "<div id='d-contain' class='col'>" +
+                            "<div class='card h-100'>" +
                             "<img src='" + result[i].Anh + "' class='card-img-top' />" +
-                            "<div class='card-body'><h5 class='card-title'>" + result[i].TenGiay + "</h5>" +
-                            "<p class='card-text'>" + result[i].Mota + "</p> </div></div></div>";
+                            "<div class='card-body'>" +
+                            "<h5 class='card-title'>" + result[i].TenGiay + "</h5>" +
+                            "<p class='card-text'>" + result[i].Mota + "</p> </div>" +
+                            "</div></div>";
                     }
                     $('#content').empty().append(html);
 
-                    isSuccess = true;
                 }
             });
-        }
-    },1000)
 
 </script>
 <%@ include file="menu.jsp" %>

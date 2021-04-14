@@ -20,8 +20,7 @@ public class HomeServiceImpl implements HomeService {
     @Override
     public List<Giay> LoadGiay() {
        List<Giay> giays=new ArrayList<>();
-       giays.add(new Giay("MG01","Giay dothan",30,10,"Xanh",10000,"LG01","NSX01","https://www.thestatesman.com/wp-content/uploads/2019/09/iStock-1160211756_ed.jpg","Yêu em"));
-       giays.add(new Giay("MG02","Giay hanvart",25,10,"Do",20000,"LG02","NSX02","https://i.pinimg.com/originals/22/ca/3f/22ca3f947c9d0905ded5d3f96195b5d0.jpg","Oke nha"));
+
        return giays;
     }
 

@@ -8,14 +8,14 @@ public class Customer {
     private String GTinh;
     private Date Dob;
     private String Que;
-    private String Sdt;
+    private int Sdt;
     private String Diachi;
     private double TongTien;
     public Customer(){
 
     }
 
-    public Customer(String maKH, String hoten, String GTinh, Date dob, String que, String sdt, String diachi, double tongTien) {
+    public Customer(String maKH, String hoten, String GTinh, Date dob, String que, int sdt, String diachi, double tongTien) {
         MaKH = maKH;
         Hoten = hoten;
         this.GTinh = GTinh;
@@ -66,11 +66,11 @@ public class Customer {
         Que = que;
     }
 
-    public String getSdt() {
+    public int getSdt() {
         return Sdt;
     }
 
-    public void setSdt(String sdt) {
+    public void setSdt(int sdt) {
         Sdt = sdt;
     }
 
