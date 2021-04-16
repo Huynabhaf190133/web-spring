@@ -47,7 +47,8 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
             e.printStackTrace();
         }
 
-
+        parameters.clear();
+        db.closeConnection();
         return giay;
     }
     public List<Giay> getByKeyword(String keyword) {

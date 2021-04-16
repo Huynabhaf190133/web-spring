@@ -19,7 +19,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <form method="post">
         <input type="text" name="MaGiay" id="MaGiay" value="dsdsd">
         <input type="text" name="TenGiay" id="TenGiay">
         <input type="text" name="Size" id="Size">
@@ -58,31 +57,38 @@
                         $("#MaNSX").append(html);
                     }
                 })
-
             </script>
         </select>
         <input type="text" name="Anh" id="Anh">
         <input type="text" name="Mota" id="Mota">
         <button id="add">Xac Nhan</button>
-    </form>
+        <div id="mes"></div>
 <script>
     $("#add").click(function () {
+        var Data={}
+        Data['MaGiay']=$("#MaGiay").val();
+        Data['TenGiay']=$("#TenGiay").val();
+        Data['Size']=$("#Size").val();
+        Data['SoLuong']=$("#SoLuong").val();
+        Data['MauSac']=$("#MauSac").val();
+        Data['Gia']=$("#Gia").val();
+        Data['MaLG']=$("#MaLG option").val();
+        Data['MaNSX']=$("#MaNSX option").val(),
+        Data['Anh']=$("#Anh").val();
+        Data['Mota']=$("#Mota").val();
         $.ajax({
             url: "/giay/create",
+            //timeout:1000,
             type: "POST",
+            contentType : "application/json",
+            data: JSON.stringify(Data),
             dataType: "JSON",
-            data: {
-                MaGiay: $("#MaGiay").value(),
-                TenGiay: $("#TenGiay").value(),
-                Size: $("#Size").value(),
-                SoLuong: $("#SoLuong").value(),
-                MauSac: $("#MauSac").value(),
-                Gia: $("#Gia").value(),
-                MaLG: $("#MaLG option").value(),
-                MaNSX: $("#MaNSX option").value(),
-                Anh: $("#Anh").value(),
-                Mota: $("#Mota").value()
+            success:function(result){
+                alert(result.MaGiay)
             },
+            error:function () {
+                alert("Có lỗi Vui long thu lai")
+            }
         })
     })
 </script>

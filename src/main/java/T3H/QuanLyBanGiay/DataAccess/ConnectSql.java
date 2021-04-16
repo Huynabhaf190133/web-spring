@@ -46,7 +46,7 @@ public class ConnectSql {
                 }
 
             result=ps.executeQuery();
-            ps.close();
+            //ps.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

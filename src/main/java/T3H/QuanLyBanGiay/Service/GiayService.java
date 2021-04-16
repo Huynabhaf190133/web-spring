@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class GiayService implements IGiayService{
+    // tang bus: thao tac voi db
+    // tang service: dung tang bus, thang controller se goi den thang service chu khong goi thang bus
+    //
     private Giaybus bus;
 
     public GiayService(){bus=new Giaybus();}
