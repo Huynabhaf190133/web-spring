@@ -2,37 +2,39 @@ package T3H.QuanLyBanGiay.Service;
 
 import T3H.QuanLyBanGiay.Business.LoaiGiayBus;
 import T3H.QuanLyBanGiay.model.Giay;
+import T3H.QuanLyBanGiay.model.LoaiGiay;
 
 import java.util.List;
 
-public class LoaiGiayService implements IGiayService{
+public class LoaiGiayService implements IcommonService<LoaiGiay> {
     private LoaiGiayBus bus;
     public LoaiGiayService(){
         bus=new LoaiGiayBus();
     }
 
+
     @Override
-    public List<Giay> getAll() {
+    public List<LoaiGiay> getAll() {
+        return bus.getAll();
+    }
+
+    @Override
+    public LoaiGiay getByID(String id) {
         return null;
     }
 
     @Override
-    public Giay getByID(String id) {
+    public List<LoaiGiay> getByKeyWord(String keyword) {
         return null;
     }
 
     @Override
-    public List<Giay> getByKeyWord(String keyword) {
-        return null;
-    }
-
-    @Override
-    public void add(Giay intro) {
+    public void add(LoaiGiay intro) {
 
     }
 
     @Override
-    public void edit(Giay info) {
+    public void edit(LoaiGiay info) {
 
     }
 

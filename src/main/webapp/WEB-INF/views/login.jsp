@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -17,32 +18,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="mb-3">
-            <label for="username" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="username" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password">
-        </div>
-        <button id="login" type="submit" class="btn btn-primary">Submit</button>
-        <script>
-            var Da={}
-            Da['username']=$('#username').val();
-            Da['password']=$("#password").val();
-            $("#login").click(function () {
-                $.ajax({
-                    url:"/login",
-                    data:JSON.stringify(Da),
-                    type:"GET",
-                    dataType:"JSON",
-                    success:function (result) {
-                        alert(result)
-                    }
-                })
+    <form class="form" action="/login/send" method="post">
+        <label class="form-label" for="username">UserName</label>
+        <input class="form-control" type="text" id="username" name="username">
+        <label class="form-label" for="password">password</label>
+        <input class="form-control" type="text" id="password" name="password">
+        <button class="btn btn-primary" id="button">click</button>
+    </form>
+    <script>
+        /*$("#button").click(function () {
+            var Data={}
+            Data['username']=$("#username").val();
+            Data['password']=$("#password").val();
+            console.log(Data)
+            $.ajax({
+                url:"/login/send",
+                dataType:"JSON",
+                contentType : "application/json",
+                type:"POST",
+                data:($("#username").val(),$("#password").val()),
+                success:function (result) {
+                    console.log(result)
+                }
             })
-        </script>
-    </div>
+        })*/
+
+    </script>
 </body>
 </html>

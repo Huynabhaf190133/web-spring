@@ -29,18 +29,12 @@ public class GiayController {
     @RequestMapping(value = "/getAll",method = RequestMethod.GET)
     @ResponseBody
     public List<Giay> getAll(){
-        List<Giay> giays=new Giaybus().getAll();
+        List<Giay> giays=giayService.getAll();
 
         return giays;
     }
 
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView createIndex(){
-        ModelAndView modelAndView=new ModelAndView("/giay/index");
-        return modelAndView;
-    }
     @PostMapping(value = "/create")
     @ResponseBody
     public Giay create(@RequestBody Giay giay){

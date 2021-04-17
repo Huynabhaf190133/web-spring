@@ -36,13 +36,12 @@
             url:"/giay/detail/" + $('#id').val(),
             type:"GET",
             dataType:"JSON",
-            timeout:1000,
             success:function (result) {
                 console.log(result.TenGiay)
                 title = result.TenGiay;
                 des=result.Mota;
-                $('#title').empty().text(title);
-                $('#des').empty().text(des);
+                $('#title').text(title);
+                $('#des').text(des);
                 $('#img').attr("src",result.Anh)
             }
         })

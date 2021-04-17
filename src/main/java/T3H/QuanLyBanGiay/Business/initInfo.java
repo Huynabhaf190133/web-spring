@@ -129,5 +129,15 @@ public class initInfo {
         );
         return supplier;
     }
+    public Account initAccount(ResultSet result) throws SQLException{
+        Account account=new Account();
+        account=new Account(
+                result.getString("userID"),
+                result.getString("userName"),
+                result.getString("password"),
+                result.getString("role")
+        );
+        return account;
+    }
 
 }
