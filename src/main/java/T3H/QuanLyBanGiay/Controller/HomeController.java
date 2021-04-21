@@ -13,7 +13,7 @@ public class HomeController {
 @Autowired
     private GiayService giayService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
     public ModelAndView homePage() {
         ModelAndView mav = new ModelAndView("index");
         return mav;

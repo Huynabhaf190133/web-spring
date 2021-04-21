@@ -16,8 +16,8 @@ public class AccountService implements IAccountService {
 
 
     @Override
-    public List<Account> login(String userID,String passowrd) {
-        return bus.login(userID,passowrd);
+    public Account login(Account account) {
+        return bus.login(account);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class AccountService implements IAccountService {
 
     @Override
     public void add(Account intro) {
-
+        bus.add(intro);
     }
 
     @Override

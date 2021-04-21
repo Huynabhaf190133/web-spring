@@ -1,48 +1,115 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 16/4/2021
-  Time: 10:24 AM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-            crossorigin="anonymous"></script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+            src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"
+    ></script>
+    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value='/resources/img/undraw_maker_launch_crhe.svg'/>" rel="shortcut icon" type="image/x-icon">
+    <title>Sign in & Sign up Form</title>
 </head>
 <body>
-    <form class="form" action="/login/send" method="post">
-        <label class="form-label" for="username">UserName</label>
-        <input class="form-control" type="text" id="username" name="username">
-        <label class="form-label" for="password">password</label>
-        <input class="form-control" type="text" id="password" name="password">
-        <button class="btn btn-primary" id="button">click</button>
-    </form>
+<div class="container">
+    <div class="forms-container">
+        <div class="signin-signup">
+            <div class="form sign-in-form">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input name="username" id="usernamein" type="text" placeholder="Username"/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input name="password" id="passwordin" type="password" placeholder="Password"/>
+                </div>
+                <input id="signin" type="button" value="Login" class="btn solid"/>
+                <p class="social-text">Or Sign in with social platforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="form sign-up-form">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input id="fullnameup" type="text" placeholder="FullName"/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input id="usernameup" type="email" placeholder="UserName"/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input id="passwordup" type="password" placeholder="Password"/>
+                </div>
+                <input id="signup" type="button" class="btn" value="Sign up"/>
+                <p class="social-text">Or Sign up with social platforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    <p>
+                        Love is like a plate of beef <br>
+                        Eating in is chewy <br>
+                        Chewing a lot is boring
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
+                </div>
+                <img src="img/log.svg" class="image" alt=""/>
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us ?</h3>
+                    <p>
+                        Together we build a civilized, modern and healthy world
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+                <img src="img/register.svg" class="image" alt=""/>
+            </div>
+        </div>
+    </div>
     <script>
-        /*$("#button").click(function () {
-            var Data={}
-            Data['username']=$("#username").val();
-            Data['password']=$("#password").val();
-            console.log(Data)
-            $.ajax({
-                url:"/login/send",
-                dataType:"JSON",
-                contentType : "application/json",
-                type:"POST",
-                data:($("#username").val(),$("#password").val()),
-                success:function (result) {
-                    console.log(result)
-                }
-            })
-        })*/
 
     </script>
+    <script src="<c:url value="/resources/js/app.js"></c:url> "></script>
+</div>
 </body>
 </html>

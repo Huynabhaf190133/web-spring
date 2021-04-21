@@ -133,6 +133,7 @@ public class initInfo {
         Account account=new Account();
         account=new Account(
                 result.getString("userID"),
+                result.getString("fullname"),
                 result.getString("userName"),
                 result.getString("password"),
                 result.getString("role")

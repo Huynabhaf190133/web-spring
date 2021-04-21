@@ -1,14 +1,8 @@
 package T3H.QuanLyBanGiay.Business;
 
-import T3H.QuanLyBanGiay.DataAccess.ConnectSql;
+import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.Customer;
-import T3H.QuanLyBanGiay.model.Giay;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerBus extends BaseBus implements IBus<Customer>{
@@ -30,8 +24,9 @@ public class CustomerBus extends BaseBus implements IBus<Customer>{
     }
 
     @Override
-    public void add(Customer info) {
+    public Account add(Customer info) {
 
+        return null;
     }
 
     @Override

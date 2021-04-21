@@ -1,14 +1,8 @@
 package T3H.QuanLyBanGiay.Business;
 
-import T3H.QuanLyBanGiay.DataAccess.ConnectSql;
-import T3H.QuanLyBanGiay.model.Giay;
+import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.PhieuXuat;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PhieuXuatBus extends BaseBus implements IBus<PhieuXuat>{
@@ -29,8 +23,9 @@ public class PhieuXuatBus extends BaseBus implements IBus<PhieuXuat>{
     }
 
     @Override
-    public void add(PhieuXuat info) {
+    public Account add(PhieuXuat info) {
 
+        return null;
     }
 
     @Override

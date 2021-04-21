@@ -1,12 +1,11 @@
 package T3H.QuanLyBanGiay.Business;
 
-import T3H.QuanLyBanGiay.DataAccess.ConnectSql;
+import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.Giay;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +37,6 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
         query = "Select * from giay where Magiay=?";
         parameters.add(id);
         ResultSet resultSet=db.getTable(query,parameters);
-        initInfo initInfo=new initInfo();
         try{
             while (resultSet.next()){
                 giay=new initInfo().initGiay(resultSet);
@@ -70,9 +68,9 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
     }
 
     @Override
-    public void add(Giay giay) {
+    public Account add(Giay giay) {
         query="Insert into giay values(?,?,?,?,?,?,?,?,?,?)";
-        parameters.add(giay.getMaGiay());
+        parameters.add(null);
         parameters.add(giay.getTenGiay());
         parameters.add(String.valueOf(giay.getSize()));
         parameters.add(String.valueOf(giay.getSoLuong()));
@@ -89,6 +87,7 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
         db.executeQuery(query,parameters);
 
         parameters.clear();
+        return null;
     }
 
     @Override

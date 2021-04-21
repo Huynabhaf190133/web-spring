@@ -1,7 +1,6 @@
 package T3H.QuanLyBanGiay.Business;
 
-import T3H.QuanLyBanGiay.DataAccess.ConnectSql;
-import T3H.QuanLyBanGiay.model.Giay;
+import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.LoaiGiay;
 
 import java.sql.Connection;
@@ -46,8 +45,9 @@ public class LoaiGiayBus extends BaseBus implements IBus<LoaiGiay>{
     }
 
     @Override
-    public void add(LoaiGiay info) {
+    public Account add(LoaiGiay info) {
 
+        return null;
     }
 
     @Override

@@ -10,9 +10,9 @@ public class BaseBus {
     protected String query;
     List<String> parameters;
 
-    public BaseBus(){
-        db=new ConnectSql();
-        parameters=new ArrayList<>();
+    public BaseBus() {
+        db = new ConnectSql();
+        parameters = new ArrayList<>();
     }
 
 }

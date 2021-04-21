@@ -1,14 +1,8 @@
 package T3H.QuanLyBanGiay.Business;
 
-import T3H.QuanLyBanGiay.DataAccess.ConnectSql;
+import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.CT_PN;
-import T3H.QuanLyBanGiay.model.Giay;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CT_PNBus extends BaseBus implements IBus<CT_PN>{
@@ -29,8 +23,9 @@ public class CT_PNBus extends BaseBus implements IBus<CT_PN>{
     }
 
     @Override
-    public void add(CT_PN info) {
+    public Account add(CT_PN info) {
 
+        return null;
     }
 
     @Override

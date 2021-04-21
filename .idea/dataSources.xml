@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ban_hang@localhost" uuid="10493a25-3b3d-4e2d-89cb-f9dc32ef724e">
+    <data-source source="LOCAL" name="ban_hang@localhost" uuid="da998562-b670-4432-95f9-46af34069b4d">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://localhost:1433;database=ban_hang</jdbc-url>
+      <jdbc-url>jdbc:sqlserver://localhost;database=ban_hang</jdbc-url>
     </data-source>
   </component>
 </project>

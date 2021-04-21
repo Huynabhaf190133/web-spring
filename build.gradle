@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'opensymphony',name: 'sitemesh',version: '2.4.2'
     implementation group: 'com.microsoft.sqlserver',name:'mssql-jdbc',version:'6.1.0.jre7'
     implementation group: 'jstl', name: 'jstl', version: '1.2'
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'

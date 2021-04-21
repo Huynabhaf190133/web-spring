@@ -8,15 +8,20 @@ import T3H.QuanLyBanGiay.model.Giay;
 import T3H.QuanLyBanGiay.model.LoaiGiay;
 import T3H.QuanLyBanGiay.model.NSX;
 import groovyjarjarantlr.preprocessor.Hierarchy;
+import jdk.nashorn.internal.ir.RuntimeNode;
 import org.springframework.beans.factory.HierarchicalBeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.ws.rs.core.Request;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/giay**",method = RequestMethod.GET)
+@RequestMapping(value = "/giay/",method = RequestMethod.GET)
 public class GiayController {
     @Autowired
 
@@ -33,17 +38,25 @@ public class GiayController {
 
         return giays;
     }
+    @GetMapping(value = "create")
+    public ModelAndView create(HttpServletRequest request){
+        ModelAndView modelAndView=new ModelAndView("/admin/giay/create");
 
-
-    @PostMapping(value = "/create")
-    @ResponseBody
-    public Giay create(@RequestBody Giay giay){
-        giayService.add(giay);
-        return giay;
+        return modelAndView;
 
     }
-    @PostMapping(value = "/edit")
+    @PostMapping(value = "/index")
+    public ModelAndView index(){
+        ModelAndView modelAndView=new ModelAndView("/admin/giay/index");
+        return modelAndView;
+
+    }
+    @PostMapping(value = "/add")
     @ResponseBody
+    public void create(@RequestBody Giay giay){
+        giayService.add(giay);
+    }
+    @PostMapping(value = "/edit")
     public Giay edit(@RequestParam Giay giay){
         giayService.edit(giay);
         return giay;
@@ -56,8 +69,6 @@ public class GiayController {
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Giay getDetails(@PathVariable("id") String id) {
-        System.out.println("id là " + id);
-        //Giay giay=new Giaybus().getSingleByID(id);
         Giay giay = giayService.getByID(id);
         return giay;
     }
