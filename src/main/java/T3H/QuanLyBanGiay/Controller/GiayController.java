@@ -38,6 +38,8 @@ public class GiayController {
 
         return giays;
     }
+
+    // View
     @GetMapping(value = "create")
     public ModelAndView create(HttpServletRequest request){
         ModelAndView modelAndView=new ModelAndView("/admin/giay/create");
@@ -51,19 +53,29 @@ public class GiayController {
         return modelAndView;
 
     }
+    @PostMapping(value = "/edit")
+    public ModelAndView edit(){
+        ModelAndView modelAndView=new ModelAndView("/admin/giay/edit");
+        return modelAndView;
+    }
+
+    // Method
+
     @PostMapping(value = "/add")
-    @ResponseBody
     public void create(@RequestBody Giay giay){
         giayService.add(giay);
     }
-    @PostMapping(value = "/edit")
-    public Giay edit(@RequestParam Giay giay){
+
+
+    @PostMapping(value = "/edit/send")
+    public void edit(@RequestParam Giay giay){
         giayService.edit(giay);
-        return giay;
     }
-    @PostMapping(value = "/delete")
-    public void delete(@RequestParam String id){
+    @GetMapping(value = "/delete/{delete}")
+    public ModelAndView delete(@PathVariable("delete") String id){
         giayService.delete(id);
+        ModelAndView modelAndView=new ModelAndView("/admin/giay/edit");
+        return modelAndView;
     }
 
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @Controller
 
@@ -18,6 +20,14 @@ public class AccountController {
         return "login";
     }
 
+
+    // Lấy tất cả tài khoản trong database ra
+    @GetMapping(value = "/login/getall")
+    @ResponseBody
+    public List<Account> getAll(){
+        List<Account> account=accountService.getAll();
+        return account;
+    }
 
     @PostMapping(value = "/login/send")
     @ResponseBody

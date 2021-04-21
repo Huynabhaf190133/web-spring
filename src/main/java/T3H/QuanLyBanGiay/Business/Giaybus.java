@@ -2,6 +2,8 @@ package T3H.QuanLyBanGiay.Business;
 
 import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.Giay;
+import T3H.QuanLyBanGiay.model.LoaiGiay;
+import T3H.QuanLyBanGiay.model.NSX;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -99,13 +101,20 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
 
 
         db.executeQuery(query,parameters);
+        parameters.clear();
+        db.closeConnection();
     }
 
 
     public void delete(String id){
-        query="DELETE giay where Magiay=?";
+        query="DELETE From Giay where MaGiay=?";
         parameters.add(id);
+
+        System.out.println(query);
+        System.out.println(parameters);
         db.executeQuery(query,parameters);
+        parameters.clear();
+        db.closeConnection();
     }
 
 }

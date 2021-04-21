@@ -10,9 +10,30 @@
             src="https://kit.fontawesome.com/64d58efce2.js"
             crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-    <link href="<c:url value='/resources/img/undraw_maker_launch_crhe.svg'/>" rel="shortcut icon" type="image/x-icon">
+    <link href="<c:url value="/resources/img/logo.svg"/>" rel="shortcut icon" type="image/x-icon">
     <title>Sign in & Sign up Form</title>
+    <style>
+        .load{
+            display: none;
+            color:red;
+            font-family: "Arial Narrow";
+            font-size: 1.1rem;
+        }
+        #err{
+            display: none;
+            color:red;
+            font-family: "Arial Narrow";
+            font-size: 1.1rem;
+        }
+        #exist{
+            display: none;
+            color:red;
+            font-family: "Arial Narrow";
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -29,6 +50,10 @@
                     <input name="password" id="passwordin" type="password" placeholder="Password"/>
                 </div>
                 <input id="signin" type="button" value="Login" class="btn solid"/>
+                <div id="err">Tài khoản hoặc mật khẩu chưa nhập</div>
+                <div class="load" id="loader">
+                    <img src="<c:url value="/resources/img/ajax-loader.gif"></c:url> ">
+                </div>
                 <p class="social-text">Or Sign in with social platforms</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -60,6 +85,7 @@
                     <input id="passwordup" type="password" placeholder="Password"/>
                 </div>
                 <input id="signup" type="button" class="btn" value="Sign up"/>
+                <div id="exist">Có lỗi xẩy ra vui lòng thử lại !!!</div>
                 <p class="social-text">Or Sign up with social platforms</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -90,7 +116,7 @@
                         Sign up
                     </button>
                 </div>
-                <img src="img/log.svg" class="image" alt=""/>
+                <img src="<c:url value="/resources/img/login.svg" />" class="image" alt=""/>
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -102,7 +128,7 @@
                         Sign in
                     </button>
                 </div>
-                <img src="img/register.svg" class="image" alt=""/>
+                <img src="<c:url value="/resources/img/rocket.svg" />" class="image" alt=""/>
             </div>
         </div>
     </div>

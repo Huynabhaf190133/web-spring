@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -68,26 +69,21 @@
 </div>
 
 <script>
-            $.ajax({
-                url: "/giay/getAll",
-                type: "GET",
-                dataType: "JSON",
-                success: function (result) {
-                    var html = "";
-                    console.log(result);
-                    for (let i = 0; i < result.length; i++) {
-                        html += "<div id='d-contain' class='col'>" +
-                            "<div class='card h-100'>" +
-                            "<a href='/giay/detail/id="+result[i].MaGiay+"'> <img src='" + result[i].Anh + "' class='card-img-top' /></a>" +
-                            "<div class='card-body'>" +
-                            "<h5 class='card-title'>" + result[i].TenGiay + "</h5>" +
-                            "<p class='card-text'>" + result[i].Mota + "</p> </div>" +
-                            "</div></div>";
-                    }
-                    $('#content').empty().append(html);
-
-                }
-            });
+    axios.get("/giay/getAll")
+        .then(response => {return response.data})
+        .then(function (result){
+            var html = "";
+            for (let i = 0; i < result.length; i++) {
+                html += "<div id='d-contain' class='col'>" +
+                    "<div class='card h-100'>" +
+                    "<a href='/giay/detail/id="+result[i].MaGiay+"'> <img src='" + result[i].Anh + "' class='card-img-top' /></a>" +
+                    "<div class='card-body'>" +
+                    "<h5 class='card-title'>" + result[i].TenGiay + "</h5>" +
+                    "<p class='card-text'>" + result[i].Mota + "</p> </div>" +
+                    "</div></div>";
+            }
+            $('#content').empty().append(html);
+        })
 </script>
 </body>
 </html>
