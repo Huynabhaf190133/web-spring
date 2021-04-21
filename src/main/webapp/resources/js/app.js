@@ -62,25 +62,6 @@ $("#signin").click(function () {
         var Data = {};
         Data["userName"] = username;
         Data["password"] = password;
-        axios.post("/login/send",Data)
-            .then(response=>{return response})
-            .transformRequest(function (){$("#loader").show();})
-            .then(result=>{
-                setTimeout(function () {
-                    $("#loader").hide();
-                    if (result.role.includes("admin")) {
-                        sessionStorage.setItem("admin", result.username);
-                        window.location.href = "giay/create"
-                    } else if (result.role.includes("Customer")) {
-                        sessionStorage.setItem("customer", "a");
-                        alert("Chào mừng bạn !!!");
-                    }
-                }, 2000)
-            })
-            .catch(err=>{
-                $("#loader").hide();
-                alert("Tài khoản hoặc mật khẩu chưa chính xác !!!")
-            })
         $.ajax({
             url: "/login/send",
             type: "POST",
@@ -100,7 +81,7 @@ $("#signin").click(function () {
                         sessionStorage.setItem("customer", "a");
                         alert("Chào mừng bạn !!!");
                     }
-                }, 2000)
+                }, 1000)
             },
             error: function () {
                 $("#loader").hide();
