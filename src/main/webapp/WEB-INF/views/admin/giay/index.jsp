@@ -19,9 +19,9 @@
             integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-        <input type="text" name="MaGiay" id="MaGiay" value="dsdsd">
         <input type="text" name="TenGiay" id="TenGiay">
         <input type="text" name="Size" id="Size">
         <input type="text" name="SoLuong" id="SoLuong">
@@ -29,36 +29,28 @@
         <input type="text" name="Gia" id="Gia">
         <select name="MaLG" id="MaLG">
             <script>
-                $.ajax({
-                    url:"/loaigiay/getloaigiay",
-                    dataType:"JSON",
-                    type:"GET",
-                    success:function (result) {
-                        console.log(result);
+                axios.get("/loaigiay/getloaigiay")
+                    .then(response=>{return response.data})
+                    .then(result=>{
                         var html="";
                         for(i=0;i<result.length;i++){
                             html+="<option value='"+result[i].MaLG+"'>"+result[i].TenLG+"</option>"
                         }
                         $("#MaLG").append(html);
-                    }
-                })
+                    })
             </script>
         </select>
         <select name="MaNSX" id="MaNSX">
             <script>
-                $.ajax({
-                    url:"/NSX/getnsx",
-                    dataType:"JSON",
-                    type:"GET",
-                    success:function (result) {
-                        console.log(result);
+                axios.get("/NSX/getnsx")
+                    .then(response=>{return response.data})
+                    .then(result=>{
                         var html="";
                         for(i=0;i<result.length;i++){
                             html+="<option value='"+result[i].MaNSX+"'>"+result[i].TenNSX+"</option>"
                         }
                         $("#MaNSX").append(html);
-                    }
-                })
+                    })
             </script>
         </select>
         <input type="text" name="Anh" id="Anh">
@@ -78,6 +70,12 @@
         Data['MaNSX']=$("#MaNSX option").val(),
         Data['Anh']=$("#Anh").val();
         Data['Mota']=$("#Mota").val();
+        axios.post("/giay/add",Data)
+            .then(response=>{return response.data})
+            .catch(err=>{alert("Thêm Thất bại")})
+            .then(result=>{
+                alert("Thêm Thành Công")
+            })
         $.ajax({
             url: "/giay/add",
             type: "POST",

@@ -46,7 +46,6 @@ public class Giaybus extends BaseBus implements IBus<Giay>{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         parameters.clear();
         db.closeConnection();
         return giay;

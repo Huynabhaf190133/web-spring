@@ -52,12 +52,12 @@ T3H/QuanLyBanGiay/Business/IBus.java
  T3H.QuanLyBanGiay.Business.IBus
 T3H/QuanLyBanGiay/Business/LoaiGiayBus.java
  T3H.QuanLyBanGiay.Business.LoaiGiayBus
-T3H/QuanLyBanGiay/Business/AccountBus.java
- T3H.QuanLyBanGiay.Business.AccountBus
+T3H/QuanLyBanGiay/Business/SupplierBus.java
+ T3H.QuanLyBanGiay.Business.SupplierBus
 T3H/QuanLyBanGiay/Business/PhieuNhapBus.java
  T3H.QuanLyBanGiay.Business.PhieuNhapBus
-T3H/QuanLyBanGiay/Service/AccountService.java
- T3H.QuanLyBanGiay.Service.AccountService
+T3H/QuanLyBanGiay/Business/CT_PNBus.java
+ T3H.QuanLyBanGiay.Business.CT_PNBus
 T3H/QuanLyBanGiay/model/Account.java
  T3H.QuanLyBanGiay.model.Account
 T3H/QuanLyBanGiay/Business/initInfo.java
@@ -66,10 +66,10 @@ T3H/QuanLyBanGiay/Business/NhanVienBus.java
  T3H.QuanLyBanGiay.Business.NhanVienBus
 T3H/QuanLyBanGiay/Business/PhieuXuatBus.java
  T3H.QuanLyBanGiay.Business.PhieuXuatBus
-T3H/QuanLyBanGiay/Business/SupplierBus.java
- T3H.QuanLyBanGiay.Business.SupplierBus
-T3H/QuanLyBanGiay/Business/CT_PNBus.java
- T3H.QuanLyBanGiay.Business.CT_PNBus
+T3H/QuanLyBanGiay/Business/AccountBus.java
+ T3H.QuanLyBanGiay.Business.AccountBus
+T3H/QuanLyBanGiay/Service/AccountService.java
+ T3H.QuanLyBanGiay.Service.AccountService
 T3H/QuanLyBanGiay/Service/GiayService.java
  T3H.QuanLyBanGiay.Service.GiayService
 T3H/QuanLyBanGiay/Business/Giaybus.java

@@ -1,7 +1,5 @@
 package T3H.QuanLyBanGiay.Business;
-
 import T3H.QuanLyBanGiay.model.Account;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

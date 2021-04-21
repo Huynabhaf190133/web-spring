@@ -15,6 +15,7 @@
             integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
             crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body style="background-color: #1cc88a">
     <div class="container">
@@ -33,20 +34,14 @@
                         <th>Mô Tả</th>
                         <th colspan="2"></th>
                     </tr>
-                    <tbody id="table">
-
-                    </tbody>
+                    <tbody id="table"></tbody>
                     <script>
                         $(document).ready(function (){
-                            $.ajax({
-                                url:"/giay/getAll",
-                                type:"GET",
-                                dataType:"JSON",
-                                success:function (result){
-                                    console.log(result)
+                            axios.get("/giay/getAll")
+                                .then(response=>{return response.data})
+                                .then(result=>{
                                     var html="";
                                     for(let i=0;i<result.length;i++){
-
                                         html+="<tr>";
                                         html+="<td>"+result[i].TenGiay+"</td>"+
                                             "<td>"+result[i].Size+"</td>"+
@@ -61,8 +56,7 @@
                                         html+="</tr>";
                                     }
                                     $("#table").append(html);
-                                }
-                            })
+                                })
                         })
                     </script>
                 </table>
