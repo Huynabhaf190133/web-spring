@@ -1,6 +1,7 @@
 package T3H.QuanLyBanGiay.Business;
 
 import T3H.QuanLyBanGiay.model.Account;
+import T3H.QuanLyBanGiay.model.Giay;
 import T3H.QuanLyBanGiay.model.LoaiGiay;
 
 import java.sql.Connection;
@@ -40,9 +41,10 @@ public class LoaiGiayBus extends BaseBus implements IBus<LoaiGiay>{
     }
 
     @Override
-    public List<LoaiGiay> getByKeyword(String keyword) {
+    public List<LoaiGiay> getByKeyword(LoaiGiay keyword) {
         return null;
     }
+
 
     @Override
     public Account add(LoaiGiay info) {
@@ -56,7 +58,7 @@ public class LoaiGiayBus extends BaseBus implements IBus<LoaiGiay>{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Giay id) {
 
     }
 }

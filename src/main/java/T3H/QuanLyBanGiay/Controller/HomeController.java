@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+
 public class HomeController {
 @Autowired
     private GiayService giayService;
 
-    @RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView homePage() {
-        ModelAndView mav = new ModelAndView("index");
+        ModelAndView mav = new ModelAndView("login");
         return mav;
     }
 
@@ -23,7 +24,7 @@ public class HomeController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView createIndex(){
-        ModelAndView modelAndView=new ModelAndView("/giay/index");
+        ModelAndView modelAndView=new ModelAndView("index");
         return modelAndView;
     }
 

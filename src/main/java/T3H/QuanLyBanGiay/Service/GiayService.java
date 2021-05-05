@@ -1,6 +1,7 @@
 package T3H.QuanLyBanGiay.Service;
 
 import T3H.QuanLyBanGiay.Business.Giaybus;
+import T3H.QuanLyBanGiay.ViewModel.GiayViewModel;
 import T3H.QuanLyBanGiay.model.Giay;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +25,12 @@ public class GiayService implements IGiayService{
         return bus.getSingleByID(id);
     }
 
+    public List<GiayViewModel> getAll2() {
+        return bus.getAll2();
+    }
+
     @Override
-    public List<Giay> getByKeyWord(String keyword) {
+    public List<Giay> getByKeyWord(Giay keyword) {
         return bus.getByKeyword(keyword);
     }
 
@@ -41,8 +46,8 @@ public class GiayService implements IGiayService{
 
 
     @Override
-    public void delete(String id) {
-        bus.delete(id);
+    public void delete(Giay giay) {
+        bus.delete(giay);
     }
 
 

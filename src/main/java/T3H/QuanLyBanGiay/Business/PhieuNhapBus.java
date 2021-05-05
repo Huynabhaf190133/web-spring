@@ -1,6 +1,7 @@
 package T3H.QuanLyBanGiay.Business;
 
 import T3H.QuanLyBanGiay.model.Account;
+import T3H.QuanLyBanGiay.model.Giay;
 import T3H.QuanLyBanGiay.model.PhieuNhap;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class PhieuNhapBus extends BaseBus implements IBus<PhieuNhap>{
     }
 
     @Override
-    public List<PhieuNhap> getByKeyword(String keyword) {
+    public List<PhieuNhap> getByKeyword(PhieuNhap keyword) {
         return null;
     }
 
@@ -34,7 +35,7 @@ public class PhieuNhapBus extends BaseBus implements IBus<PhieuNhap>{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Giay id) {
 
     }
 }

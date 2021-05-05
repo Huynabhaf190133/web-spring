@@ -1,10 +1,12 @@
 package T3H.QuanLyBanGiay.Controller;
 import T3H.QuanLyBanGiay.Service.GiayService;
+import T3H.QuanLyBanGiay.ViewModel.GiayViewModel;
 import T3H.QuanLyBanGiay.model.Giay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -27,13 +29,11 @@ public class GiayController {
         return giays;
     }
 
-    // View
+    // View admin
     @GetMapping(value = "create")
     public ModelAndView create(HttpServletRequest request){
         ModelAndView modelAndView=new ModelAndView("/admin/giay/create");
-
         return modelAndView;
-
     }
     @PostMapping(value = "/index")
     public ModelAndView index(){
@@ -41,29 +41,42 @@ public class GiayController {
         return modelAndView;
 
     }
+    @GetMapping("/index/getall")
+    @ResponseBody
+    public List<GiayViewModel> getAll2(){
+        List<GiayViewModel> GiayViewModels=giayService.getAll2();
+        return GiayViewModels;
+    }
     @PostMapping(value = "/edit")
     public ModelAndView edit(){
         ModelAndView modelAndView=new ModelAndView("/admin/giay/edit");
         return modelAndView;
     }
-
+    @RequestMapping(value = "/detail/id={id}", method = RequestMethod.GET)
+    public ModelAndView details(@PathVariable("id") String id) {
+        ModelAndView mav = new ModelAndView("detail");
+        mav.addObject("id",id);
+        return mav;
+    }
     // Method
 
     @PostMapping(value = "/add")
+    @ResponseBody
     public void create(@RequestBody Giay giay){
         giayService.add(giay);
     }
 
 
     @PostMapping(value = "/edit/send")
-    public void edit(@RequestParam Giay giay){
-        giayService.edit(giay);
+    @ResponseBody
+    public void edit(@RequestBody Giay giay){
+        System.out.println(giay);;giayService.edit(giay);
     }
-    @GetMapping(value = "/delete/{delete}")
-    public ModelAndView delete(@PathVariable("delete") String id){
-        giayService.delete(id);
-        ModelAndView modelAndView=new ModelAndView("/admin/giay/edit");
-        return modelAndView;
+    @PostMapping(value = "/delete")
+    @ResponseBody
+    public void delete(@RequestBody Giay giay){
+        System.out.println(giay.getMaGiay());
+        giayService.delete(giay);
     }
 
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
@@ -73,10 +86,13 @@ public class GiayController {
         return giay;
     }
 
-    @RequestMapping(value = "/detail/id={id}", method = RequestMethod.GET)
-    public ModelAndView details(@PathVariable("id") String id) {
-        ModelAndView mav = new ModelAndView("detail");
-        mav.addObject("id",id);
-        return mav;
+    // Get By ID
+    @PostMapping(value = "/getByKeyword")
+    @ResponseBody
+    public List<Giay> getByKeyWord(@RequestBody Giay giay){
+        List<Giay> giay1=giayService.getByKeyWord(giay);
+        return giay1;
     }
+
+
 }

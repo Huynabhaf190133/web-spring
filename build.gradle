@@ -27,6 +27,8 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
+apply plugin: 'war'
+apply plugin: 'war'
 test {
     useJUnitPlatform()
 }

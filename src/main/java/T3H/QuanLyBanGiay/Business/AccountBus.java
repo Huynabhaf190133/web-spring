@@ -1,5 +1,7 @@
 package T3H.QuanLyBanGiay.Business;
 import T3H.QuanLyBanGiay.model.Account;
+import T3H.QuanLyBanGiay.model.Giay;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,14 +39,13 @@ public class AccountBus extends BaseBus implements IBus<Account> {
     }
 
     @Override
-    public List<Account> getByKeyword(String keyword) {
+    public List<Account> getByKeyword(Account keyword) {
         return null;
     }
 
     @Override
     public Account add(Account info) {
         query="INSERT INTO Account values(?,?,?,?)";
-      //  parameters.add(info.getUserID());
         parameters.add(info.getFullName());
         parameters.add(info.getUserName());
         parameters.add(info.getPassword());
@@ -62,7 +63,7 @@ public class AccountBus extends BaseBus implements IBus<Account> {
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Giay id) {
 
     }
 

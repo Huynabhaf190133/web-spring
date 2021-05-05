@@ -6,5 +6,7 @@
     </decorator>
     <decorator name="admin" page="admin.jsp">
         <pattern>/giay/create</pattern>
+        <pattern>/giay/index</pattern>
+        <pattern>/giay/add</pattern>
     </decorator>
 </decorators>

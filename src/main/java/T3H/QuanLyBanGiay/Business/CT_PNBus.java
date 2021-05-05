@@ -2,6 +2,7 @@ package T3H.QuanLyBanGiay.Business;
 
 import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.CT_PN;
+import T3H.QuanLyBanGiay.model.Giay;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class CT_PNBus extends BaseBus implements IBus<CT_PN>{
     }
 
     @Override
-    public List<CT_PN> getByKeyword(String keyword) {
+    public List<CT_PN> getByKeyword(CT_PN keyword) {
         return null;
     }
 
@@ -34,7 +35,7 @@ public class CT_PNBus extends BaseBus implements IBus<CT_PN>{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Giay id) {
 
     }
 }

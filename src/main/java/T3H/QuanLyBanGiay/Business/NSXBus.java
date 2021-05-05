@@ -1,6 +1,7 @@
 package T3H.QuanLyBanGiay.Business;
 
 import T3H.QuanLyBanGiay.model.Account;
+import T3H.QuanLyBanGiay.model.Giay;
 import T3H.QuanLyBanGiay.model.NSX;
 
 import java.sql.Connection;
@@ -40,7 +41,7 @@ public class NSXBus extends BaseBus implements IBus<NSX>{
     }
 
     @Override
-    public List<NSX> getByKeyword(String keyword) {
+    public List<NSX> getByKeyword(NSX keyword) {
         return null;
     }
 
@@ -56,7 +57,7 @@ public class NSXBus extends BaseBus implements IBus<NSX>{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Giay id) {
 
     }
 }

@@ -49,8 +49,6 @@ $("#signup").click(function () {
             })
     }
 })
-
-
 // Đắng Nhập
 $("#signin").click(function () {
     var username = $("#usernamein").val();
@@ -62,32 +60,20 @@ $("#signin").click(function () {
         var Data = {};
         Data["userName"] = username;
         Data["password"] = password;
-        $.ajax({
-            url: "/login/send",
-            type: "POST",
-            dataType: "JSON",
-            contentType: "application/json",
-            data: JSON.stringify(Data),
-            beforeSend: function () {
-                $("#loader").show();
-            },
-            success: function (result) {
+        axios.post("/login/send", Data)
+            .then(response => {$("#loader").show();return response.data;})
+            .then(result => {
                 setTimeout(function () {
                     $("#loader").hide();
                     if (result.role.includes("admin")) {
                         sessionStorage.setItem("admin", result.username);
-                        window.location.href = "giay/create"
+                        window.location.href = "/giay/index"
                     } else if (result.role.includes("Customer")) {
-                        sessionStorage.setItem("customer", "a");
+                        sessionStorage.setItem("customer", "afsef3f3f3");
                         alert("Chào mừng bạn !!!");
                     }
-                }, 1000)
-            },
-            error: function () {
-                $("#loader").hide();
-                alert("Tài khoản hoặc mật khẩu chưa chính xác !!!")
-            }
-        });
+                }, 800)
+            })
+            .catch(() => {$("#loader").hide();alert("Tài khoản hoặc mật khẩu chưa chính xác !!!")})
     }
-
 });

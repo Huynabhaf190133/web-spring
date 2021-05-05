@@ -27,13 +27,14 @@ public class AccountService implements IAccountService {
 
     @Override
     public Account getByID(String id) {
-        return null;
+        return bus.getSingleByID(id);
     }
 
     @Override
-    public List<Account> getByKeyWord(String keyword) {
-        return null;
+    public List<Account> getByKeyWord(Account keyword) {
+        return bus.getByKeyword(keyword);
     }
+
 
     @Override
     public void add(Account intro) {
@@ -46,9 +47,10 @@ public class AccountService implements IAccountService {
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Account id) {
 
     }
+
 
 
 }

@@ -1,6 +1,7 @@
 package T3H.QuanLyBanGiay.Business;
 
 import T3H.QuanLyBanGiay.model.Account;
+import T3H.QuanLyBanGiay.model.Giay;
 import T3H.QuanLyBanGiay.model.NhanVien;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class NhanVienBus extends BaseBus implements IBus<NhanVien>{
     }
 
     @Override
-    public List<NhanVien> getByKeyword(String keyword) {
+    public List<NhanVien> getByKeyword(NhanVien keyword) {
         return null;
     }
 
@@ -34,7 +35,7 @@ public class NhanVienBus extends BaseBus implements IBus<NhanVien>{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Giay id) {
 
     }
 }

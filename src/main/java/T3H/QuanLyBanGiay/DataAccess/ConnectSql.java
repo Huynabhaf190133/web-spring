@@ -7,7 +7,7 @@ public class ConnectSql {
     private final String connectString;
     private Connection connection;
     public ConnectSql(){
-        connectString="jdbc:sqlserver://ADMIN\\MSSQLSERVER01;database=ban_hang";
+        connectString="jdbc:sqlserver://DESKTOP-H5H4300;database=bangiay";
     }
     public Connection getConnection(){
         if(connection!=null){
@@ -50,6 +50,8 @@ public class ConnectSql {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(query);
+        System.out.println(parameters);
         return result;
     }
     public int executeQuery(String query,List<String> parameters){

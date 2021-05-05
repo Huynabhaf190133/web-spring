@@ -13,7 +13,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Admin <sup></sup></div>
     </a>
 
     <!-- Divider -->
@@ -87,8 +87,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="/giay/index">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
+                <a class="collapse-item" href="/giay/index">Manage Shoes</a>
+                <a class="collapse-item" href="register.html">Manage Account</a>
                 <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>

@@ -23,8 +23,9 @@ public class LoaiGiayService implements IcommonService<LoaiGiay> {
         return null;
     }
 
+
     @Override
-    public List<LoaiGiay> getByKeyWord(String keyword) {
+    public List<LoaiGiay> getByKeyWord(LoaiGiay keyword) {
         return null;
     }
 
@@ -39,7 +40,8 @@ public class LoaiGiayService implements IcommonService<LoaiGiay> {
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(LoaiGiay id) {
 
     }
+
 }

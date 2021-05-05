@@ -2,6 +2,7 @@ package T3H.QuanLyBanGiay.Business;
 
 import T3H.QuanLyBanGiay.model.Account;
 import T3H.QuanLyBanGiay.model.Customer;
+import T3H.QuanLyBanGiay.model.Giay;
 
 import java.util.List;
 
@@ -19,9 +20,10 @@ public class CustomerBus extends BaseBus implements IBus<Customer>{
     }
 
     @Override
-    public List<Customer> getByKeyword(String keyword) {
+    public List<Customer> getByKeyword(Customer keyword) {
         return null;
     }
+
 
     @Override
     public Account add(Customer info) {
@@ -35,7 +37,7 @@ public class CustomerBus extends BaseBus implements IBus<Customer>{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Giay id) {
 
     }
 }
